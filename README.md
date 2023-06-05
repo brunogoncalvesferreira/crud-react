@@ -16,7 +16,7 @@ Neste projeto podemos criar, ler, atualizar e deletar usuários.
 Este projeto é divido em duas partes:
 
 Backend
-Frontend
+
 Frontend precisa que o Backend esteja sendo executado para funcionar.
 
 Pré-requisitos
