@@ -38,7 +38,7 @@ cd backend
 npm install
 
 # Execute o servidor
-npm src/server.js
+node src/server.js
 
 # Acesse a pasta do frontend
 cd ../
