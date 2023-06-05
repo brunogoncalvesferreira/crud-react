@@ -56,5 +56,5 @@ http://localhost:3000
 # o backend iniciará na porta: 3001, acesse:
 http://localhost:3001/usuarios
 
-# Você tem pode utilizar algum programa para acessar o banco de dados
+# Você também pode utilizar algum programa para acessar o banco de dados
 ```
