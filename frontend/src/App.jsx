@@ -1,16 +1,16 @@
-import { useEffect, useState } from "react"
-import { Card } from "./components/Card"
-import styles from "./App.module.css"
-import axios from "axios"
-import { Modal } from "./components/Modal"
-import { Form } from "./components/Form"
+import { useEffect, useState } from 'react'
+import { Card } from './components/Card'
+import styles from './App.module.css'
+import axios from 'axios'
+import { Modal } from './components/Modal'
+import { Form } from './components/Form'
 
 export function App() {
   const [users, setUsers] = useState([])
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [cpf, setCpf] = useState("")
-  const [phone, setPhone] = useState("")
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [cpf, setCpf] = useState('')
+  const [phone, setPhone] = useState('')
   const [editUsers, setEditUsers] = useState(null)
   const [openModal, setOpenModal] = useState(false)
 
@@ -20,7 +20,7 @@ export function App() {
 
   async function getUsers() {
     try {
-      const response = await axios.get("http://localhost:3001/usuarios")
+      const response = await axios.get('http://localhost:3001/usuarios')
       setUsers(response.data)
     } catch (error) {
       console.error(error)
@@ -31,17 +31,17 @@ export function App() {
     e.preventDefault()
 
     try {
-      axios.post("http://localhost:3001/usuarios", {
+      axios.post('http://localhost:3001/usuarios', {
         name,
         email,
         cpf,
         phone,
       })
       getUsers()
-      setName("")
-      setEmail("")
-      setCpf("")
-      setPhone("")
+      setName('')
+      setEmail('')
+      setCpf('')
+      setPhone('')
     } catch (error) {
       console.error(error)
     }
@@ -59,10 +59,10 @@ export function App() {
 
   async function closeEditModal() {
     setEditUsers(null)
-    setName("")
-    setEmail("")
-    setCpf("")
-    setPhone("")
+    setName('')
+    setEmail('')
+    setCpf('')
+    setPhone('')
     setOpenModal(false)
   }
 
@@ -138,7 +138,7 @@ export function App() {
         </div>
       </div>
 
-      {openModal && (
+      {/* {openModal && (
         <Modal
           updateUsers={updateUsers}
           name={name}
@@ -151,7 +151,7 @@ export function App() {
           setPhone={setPhone}
           onCloseEditModal={closeEditModal}
         />
-      )}
+      )} */}
     </div>
   )
 }

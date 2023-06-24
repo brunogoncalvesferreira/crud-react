@@ -1,6 +1,6 @@
-import styles from "./Card.module.css"
-import { FaTrash, FaUserEdit } from "react-icons/fa"
-import PropTypes from "prop-types"
+import styles from './Card.module.css'
+import { FaTrash, FaUserEdit } from 'react-icons/fa'
+import PropTypes from 'prop-types'
 
 Card.propTypes = {
   name: PropTypes.string,

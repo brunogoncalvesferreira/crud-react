@@ -1,5 +1,5 @@
-import styles from "./Modal.module.css"
-import PropTypes from "prop-types"
+import styles from './Modal.module.css'
+import PropTypes from 'prop-types'
 
 Modal.propTypes = {
   updateUsers: PropTypes.func,
@@ -24,10 +24,10 @@ export function Modal({
   setEmail,
   setCpf,
   setPhone,
-  onClosEditModal,
+  onCloseEditModal,
 }) {
   function handleCloseModalEdit() {
-    onClosEditModal
+    onCloseEditModal
   }
 
   return (

@@ -1,6 +1,6 @@
-import express from "express"
-import sqlite3 from "sqlite3"
-import cors from "cors"
+import express from 'express'
+import sqlite3 from 'sqlite3'
+import cors from 'cors'
 
 const app = express()
 const port = 3001
@@ -8,7 +8,7 @@ const port = 3001
 app.use(cors())
 app.use(express.json())
 
-const db = new sqlite3.Database("./src/database.db")
+const db = new sqlite3.Database('./src/database.db')
 
 db.serialize(() => {
   db.run(`
@@ -23,7 +23,7 @@ db.serialize(() => {
 })
 
 // Inserindo dados no banco de dados
-app.post("/usuarios", (req, res) => {
+app.post('/usuarios', (req, res) => {
   const { name, email, cpf, phone } = req.body
 
   db.run(
@@ -36,12 +36,12 @@ app.post("/usuarios", (req, res) => {
       } else {
         res.sendStatus(201)
       }
-    }
+    },
   )
 })
 
 // Criando uma rota para buscar os usuários
-app.get("/usuarios", (req, res) => {
+app.get('/usuarios', (req, res) => {
   db.all(`SELECT * FROM users`, (error, rows) => {
     if (error) {
       console.error(error)
@@ -53,7 +53,7 @@ app.get("/usuarios", (req, res) => {
 })
 
 // Atualizando dos usuários
-app.put("/usuarios/:id", (req, res) => {
+app.put('/usuarios/:id', (req, res) => {
   const { name, email, cpf, phone } = req.body
   const { id } = req.params
 
@@ -67,12 +67,12 @@ app.put("/usuarios/:id", (req, res) => {
       } else {
         res.sendStatus(200)
       }
-    }
+    },
   )
 })
 
 // Deletando usuário
-app.delete("/usuarios/:id", (req, res) => {
+app.delete('/usuarios/:id', (req, res) => {
   const { id } = req.params
 
   db.run(`DELETE FROM users WHERE id = ?`, id, (error) => {
