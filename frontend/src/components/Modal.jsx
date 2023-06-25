@@ -1,4 +1,3 @@
-import styles from './Modal.module.css'
 import PropTypes from 'prop-types'
 
 Modal.propTypes = {
@@ -27,16 +26,17 @@ export function Modal({
   onCloseEditModal,
 }) {
   function handleCloseModalEdit() {
-    onCloseEditModal
+    onCloseEditModal()
   }
 
   return (
-    <div className={styles.modal}>
-      <div className={styles.modalContent}>
-        <h2>Editar usuário</h2>
+    <div className="fixed grid h-full w-full place-content-center bg-white">
+      <div className="flex w-[40rem] flex-col rounded bg-blue-300 p-4">
+        <h2 className="mb-2 text-xl font-bold text-gray-800">Editar usuário</h2>
 
-        <form onSubmit={updateUsers}>
+        <form className="flex flex-col space-y-2" onSubmit={updateUsers}>
           <input
+            className="rounded border-2 border-blue-500 p-2 outline-none"
             type="text"
             placeholder="Nome"
             required
@@ -44,6 +44,7 @@ export function Modal({
             value={name}
           />
           <input
+            className="rounded border-2 border-blue-500 p-2 outline-none"
             type="email"
             placeholder="E-mail"
             required
@@ -51,6 +52,7 @@ export function Modal({
             value={email}
           />
           <input
+            className="rounded border-2 border-blue-500 p-2 outline-none"
             type="text"
             placeholder="CPF"
             required
@@ -58,6 +60,7 @@ export function Modal({
             value={cpf}
           />
           <input
+            className="rounded border-2 border-blue-500 p-2 outline-none"
             type="tel"
             placeholder="Telefone"
             required
@@ -65,9 +68,18 @@ export function Modal({
             value={phone}
           />
 
-          <div className={styles.buttons}>
-            <button type="submit">Atualizar</button>
-            <button type="button" onClick={handleCloseModalEdit}>
+          <div className="space-x-2">
+            <button
+              className="bg-yellow-500 p-2 text-sm text-white hover:bg-yellow-600"
+              type="submit"
+            >
+              Atualizar
+            </button>
+            <button
+              className="bg-red-400 p-2 text-sm text-white hover:bg-red-600"
+              type="button"
+              onClick={handleCloseModalEdit}
+            >
               Cancelar
             </button>
           </div>

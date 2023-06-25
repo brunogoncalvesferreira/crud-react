@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-Form.propTypes = {
+Sidebar.propTypes = {
   addUsers: PropTypes.func,
   name: PropTypes.string,
   email: PropTypes.string,
@@ -12,7 +12,7 @@ Form.propTypes = {
   setPhone: PropTypes.string,
 }
 
-export function Form({
+export function Sidebar({
   addUsers,
   name,
   email,
@@ -24,8 +24,9 @@ export function Form({
   setPhone,
 }) {
   return (
-    <form onSubmit={addUsers}>
+    <form onSubmit={addUsers} className="flex flex-col space-y-1">
       <input
+        className="border-2 font-semibold text-blue-950 outline-none border-blue-500 rounded p-2"
         type="text"
         placeholder="Digite seu nome"
         required
@@ -33,6 +34,7 @@ export function Form({
         value={name}
       />
       <input
+        className="border-2 font-semibold text-blue-950 outline-none border-blue-500 rounded p-2"
         type="email"
         placeholder="Digite seu e-mail"
         required
@@ -40,6 +42,7 @@ export function Form({
         value={email}
       />
       <input
+        className="border-2 font-semibold text-blue-950 outline-none border-blue-500 rounded p-2"
         type="text"
         placeholder="Digite seu cpf"
         required
@@ -47,6 +50,7 @@ export function Form({
         value={cpf}
       />
       <input
+        className="border-2 font-semibold text-blue-950 outline-none border-blue-500 rounded p-2"
         type="tel"
         placeholder="Digite seu telefone"
         required
@@ -54,7 +58,12 @@ export function Form({
         value={phone}
       />
 
-      <button type="submit">Adicionar</button>
+      <button
+        className="bg-blue-500 text-white rounded p-2 font-bold hover:bg-blue-700"
+        type="submit"
+      >
+        Adicionar
+      </button>
     </form>
   )
 }
