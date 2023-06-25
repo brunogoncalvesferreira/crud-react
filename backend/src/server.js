@@ -1,15 +1,16 @@
-import express from 'express'
-import sqlite3 from 'sqlite3'
-import cors from 'cors'
+import express from 'express' // Framework web nodejs, nos auxilia na criação de servidores para web
+import sqlite3 from 'sqlite3' // Biblioteca para interagir com banco de dados SQLite
+import cors from 'cors' // É uma medida de segurança implementada pelos navegadores para proteger os usuários, limitando o acesso de scripts a recursos de origens diferentes.
 
-const app = express()
-const port = 3001
+const app = express() // Chamada para criar instância do aplicativo, será usada para criar as rotas da aplicação.
+const port = 3001 // Indica onde servisor será executado, localhost:3001
 
-app.use(cors())
-app.use(express.json())
+app.use(cors()) // app.use() É usada para adicionar middlewares ao aplicativo Express. cors() é um middleware que habilita o CORS no aplicativo, permitindo que recursos sejam acessados por outros domínios.
+app.use(express.json()) // express.json() é um middleware do Express que analisa o corpo das requisições com o tipo application/json. Ele analisa o conteúdo JSON enviado nas requisições e o torna acessível através do objeto req.body nas rotas do aplicativo
 
-const db = new sqlite3.Database('./src/database.db')
+const db = new sqlite3.Database('./src/database.db') // Criação do banco de dados da aplicação
 
+// O método serialize() é usado para garantir que as operações com o banco de dados sejam executadas em sequência
 db.serialize(() => {
   db.run(`
     CREATE TABLE IF NOT EXISTS users (

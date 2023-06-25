@@ -49,7 +49,6 @@ export function App() {
 
   async function openEditModal(user) {
     setEditUsers(user)
-    console.log(setName(user.name))
     setName(user.name)
     setEmail(user.email)
     setCpf(user.cpf)

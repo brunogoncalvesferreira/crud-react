@@ -6,10 +6,10 @@ Sidebar.propTypes = {
   email: PropTypes.string,
   cpf: PropTypes.string,
   phone: PropTypes.string,
-  setName: PropTypes.string,
-  setEmail: PropTypes.string,
-  setCpf: PropTypes.string,
-  setPhone: PropTypes.string,
+  setName: PropTypes.func,
+  setEmail: PropTypes.func,
+  setCpf: PropTypes.func,
+  setPhone: PropTypes.func,
 }
 
 export function Sidebar({
@@ -26,7 +26,7 @@ export function Sidebar({
   return (
     <form onSubmit={addUsers} className="flex flex-col space-y-1">
       <input
-        className="border-2 font-semibold text-blue-950 outline-none border-blue-500 rounded p-2"
+        className="rounded border-2 border-blue-500 p-2 font-semibold text-blue-950 outline-none"
         type="text"
         placeholder="Digite seu nome"
         required
@@ -34,7 +34,7 @@ export function Sidebar({
         value={name}
       />
       <input
-        className="border-2 font-semibold text-blue-950 outline-none border-blue-500 rounded p-2"
+        className="rounded border-2 border-blue-500 p-2 font-semibold text-blue-950 outline-none"
         type="email"
         placeholder="Digite seu e-mail"
         required
@@ -42,7 +42,7 @@ export function Sidebar({
         value={email}
       />
       <input
-        className="border-2 font-semibold text-blue-950 outline-none border-blue-500 rounded p-2"
+        className="rounded border-2 border-blue-500 p-2 font-semibold text-blue-950 outline-none"
         type="text"
         placeholder="Digite seu cpf"
         required
@@ -50,7 +50,7 @@ export function Sidebar({
         value={cpf}
       />
       <input
-        className="border-2 font-semibold text-blue-950 outline-none border-blue-500 rounded p-2"
+        className="rounded border-2 border-blue-500 p-2 font-semibold text-blue-950 outline-none"
         type="tel"
         placeholder="Digite seu telefone"
         required
@@ -59,7 +59,7 @@ export function Sidebar({
       />
 
       <button
-        className="bg-blue-500 text-white rounded p-2 font-bold hover:bg-blue-700"
+        className="rounded bg-blue-500 p-2 font-bold text-white hover:bg-blue-700"
         type="submit"
       >
         Adicionar

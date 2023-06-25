@@ -4,6 +4,10 @@
 
 Neste projeto podemos criar, ler, atualizar e deletar usuários.
 
+## Layout
+
+<img src="./frontend/.github/preview.png" width="100%"/>
+
 ## Features
 
 - Criar
