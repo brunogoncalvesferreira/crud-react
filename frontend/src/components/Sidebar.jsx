@@ -1,17 +1,3 @@
-import PropTypes from 'prop-types'
-
-Sidebar.propTypes = {
-  addUsers: PropTypes.func,
-  name: PropTypes.string,
-  email: PropTypes.string,
-  cpf: PropTypes.string,
-  phone: PropTypes.string,
-  setName: PropTypes.func,
-  setEmail: PropTypes.func,
-  setCpf: PropTypes.func,
-  setPhone: PropTypes.func,
-}
-
 export function Sidebar({
   addUsers,
   name,

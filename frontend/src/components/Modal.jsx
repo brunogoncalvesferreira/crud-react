@@ -1,18 +1,3 @@
-import PropTypes from 'prop-types'
-
-Modal.propTypes = {
-  updateUsers: PropTypes.func,
-  name: PropTypes.string,
-  email: PropTypes.string,
-  cpf: PropTypes.string,
-  phone: PropTypes.string,
-  setName: PropTypes.string,
-  setEmail: PropTypes.string,
-  setCpf: PropTypes.string,
-  setPhone: PropTypes.string,
-  onClosEditModal: PropTypes.func,
-}
-
 export function Modal({
   updateUsers,
   name,

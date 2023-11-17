@@ -1,15 +1,4 @@
-import PropTypes from 'prop-types'
 import { FaTrash, FaUserEdit } from 'react-icons/fa'
-
-Card.propTypes = {
-  name: PropTypes.string,
-  email: PropTypes.string,
-  cpf: PropTypes.string,
-  phone: PropTypes.string,
-  onOpenEditModal: PropTypes.func,
-  user: PropTypes.object,
-  onDeleteUsers: PropTypes.func,
-}
 
 export function Card({
   name,

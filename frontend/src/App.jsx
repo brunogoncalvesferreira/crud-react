@@ -16,7 +16,7 @@ export function App() {
 
   useEffect(() => {
     getUsers()
-  }, [])
+  }, [users])
 
   async function getUsers() {
     try {
